@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantTrackerLib", "RestaurantTrackerLib\RestaurantTrackerLib.csproj", "{5B86D155-E980-4FD8-B9DC-6F63CEC21516}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RTLibTest", "RTLibTest\RTLibTest.csproj", "{93D306C8-E79D-47F8-8388-57CDC644452E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantTrackerCon", "RestaurantTrackerCon\RestaurantTrackerCon.csproj", "{6E1B0795-27A4-43EA-BE3B-9ADF2C76AFF2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5B86D155-E980-4FD8-B9DC-6F63CEC21516}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B86D155-E980-4FD8-B9DC-6F63CEC21516}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B86D155-E980-4FD8-B9DC-6F63CEC21516}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B86D155-E980-4FD8-B9DC-6F63CEC21516}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93D306C8-E79D-47F8-8388-57CDC644452E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93D306C8-E79D-47F8-8388-57CDC644452E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93D306C8-E79D-47F8-8388-57CDC644452E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93D306C8-E79D-47F8-8388-57CDC644452E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E1B0795-27A4-43EA-BE3B-9ADF2C76AFF2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E1B0795-27A4-43EA-BE3B-9ADF2C76AFF2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E1B0795-27A4-43EA-BE3B-9ADF2C76AFF2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E1B0795-27A4-43EA-BE3B-9ADF2C76AFF2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
