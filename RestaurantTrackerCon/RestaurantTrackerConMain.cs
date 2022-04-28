@@ -1,4 +1,4 @@
-﻿using System.Globalization;
+using System.Globalization;
 using RTLib;
 
 namespace RestaurantTrackerCon;
@@ -15,17 +15,17 @@ public static class RestaurantTrackerConMain
 
         // The first argument is the path to the database file
         var dbPath = args[0];
+
+        // Split out the command and additional parameters
+        var cmd = args[1];
+        var parms = args[2..];
         
         try 
         {
             // Open the database
             using var rt = new RT(dbPath);
             rt.BeginTransaction();
-
-            // Split out the command and additional parameters
-            var cmd = args[1];
-            var parms = args[2..];
-
+            
             // Process the command...
             switch (cmd.ToLower())
             {
@@ -693,4 +693,3 @@ public static class RestaurantTrackerConMain
         Console.WriteLine(@"    Pick-Restaurant groupname");
     }
 }
-
