@@ -1,5 +1,4 @@
 using Microsoft.Data.Sqlite;
-using SQLitePCL;
 
 namespace RTLib;
 
