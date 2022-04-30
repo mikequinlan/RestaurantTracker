@@ -1,0 +1,16 @@
+{
+  "version": 2,
+  "dgSpecHash": "AzmEHkJSxIObl6vOj27LCV2DMb3/3YWZoZdUirGEyIWEgCY3cP4F+SPBrWGvfm1IJP72vuJLT6cIGgJzK5hBKw==",
+  "success": true,
+  "projectFilePath": "/Users/mquinlan/Source/RiderProjects/RestaurantTracker/RestaurantTrackerCon/RestaurantTrackerCon.csproj",
+  "expectedPackageFiles": [
+    "/Users/mquinlan/.nuget/packages/microsoft.data.sqlite/6.0.4/microsoft.data.sqlite.6.0.4.nupkg.sha512",
+    "/Users/mquinlan/.nuget/packages/microsoft.data.sqlite.core/6.0.4/microsoft.data.sqlite.core.6.0.4.nupkg.sha512",
+    "/Users/mquinlan/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.0.6/sqlitepclraw.bundle_e_sqlite3.2.0.6.nupkg.sha512",
+    "/Users/mquinlan/.nuget/packages/sqlitepclraw.core/2.0.6/sqlitepclraw.core.2.0.6.nupkg.sha512",
+    "/Users/mquinlan/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.0.6/sqlitepclraw.lib.e_sqlite3.2.0.6.nupkg.sha512",
+    "/Users/mquinlan/.nuget/packages/sqlitepclraw.provider.e_sqlite3/2.0.6/sqlitepclraw.provider.e_sqlite3.2.0.6.nupkg.sha512",
+    "/Users/mquinlan/.nuget/packages/system.memory/4.5.3/system.memory.4.5.3.nupkg.sha512"
+  ],
+  "logs": []
+}

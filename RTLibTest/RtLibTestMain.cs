@@ -1,24 +1,42 @@
 ﻿using System.Runtime.CompilerServices;
 using RTLib;
 
+// Location of the test database file
 const string DBPath = "/Users/mquinlan/SQLite/RestaurantTracker/RestaurantTrackerDBTest.sqlite";
 
+// Delete any previously created database file, so we can start from scratch. Make sure the directory for the file exists.
 PrepDBFile();
 
+// Open and create the database and delete any contents.
 using var rt = new RT(DBPath);
 ClearDB();
 
+// Validate the APIs for the User table
 ValidateUser();
+
+// Validate the APIs for the Group table
 ValidateGroup();
+
+// Validate the APIs for the Restaurant table
 ValidateRestaurant();
+
+// Validate the APIs for the UserGroup table
 ValidateUserGroup();
+
+// Validate the APIs for the RestaurantGroup table
 ValidateRestaurantGroup();
+
+// Validate the APIs for the RestaurantVisit table
 ValidateRestaurantVisit();
+
+// Validate the PickRestaurant method
 ValidatePickRestaurant();
 
+// Clear the database and indicate we are done
 ClearDB();
 Console.WriteLine("Ok!");
 
+// Delete the contents of the database tables. Use the APIs (instead of DELETE TABLE...) so we can make sure they are working.
 void ClearDB()
 {
     foreach (var (userId, _) in rt.GetUsers()) rt.DeleteUser(userId);
@@ -31,6 +49,7 @@ void ClearDB()
     Assert(rt.GetRestaurantVisits().Count == 0);
 }
 
+// Check the APIs for accessing the User table
 void ValidateUser()
 {
     rt.AddUser("mquinlan");
@@ -46,6 +65,7 @@ void ValidateUser()
     Assert(rt.GetUsers().Count == 1);
 }
 
+// Check the APIs for accessing the Group table
 void ValidateGroup()
 {
     rt.AddGroup("Boise Tech Lunch");
@@ -61,6 +81,7 @@ void ValidateGroup()
     Assert(rt.GetGroups().Count == 1);
 }
 
+// Check the APIs for accessing the Restaurant table
 void ValidateRestaurant()
 {
     rt.AddRestaurant("Louie's Pizza & Italian Restaurant");
@@ -80,6 +101,7 @@ void ValidateRestaurant()
     Assert(rt.GetRestaurants().Count == 3);
 }
 
+// Check the APIs for accessing the UserGroup table
 void ValidateUserGroup()
 {
     var groupId1 = AddNewGroup("Group1");
@@ -111,6 +133,7 @@ void ValidateUserGroup()
     Assert(rt.GetAllGroupsForUser(userId2).Count == 1);
 }
 
+// Check the APIs for accessing the RestaurantGroup table
 void ValidateRestaurantGroup()
 {
     var groupId1 = AddNewGroup("Group1");
@@ -142,6 +165,7 @@ void ValidateRestaurantGroup()
     Assert(rt.GetAllGroupsForRestaurant(restaurantId2).Count == 1);
 }
 
+// Check the APIs for accessing the RestaurantVisit table
 void ValidateRestaurantVisit()
 {
     ClearDB();
@@ -163,6 +187,7 @@ void ValidateRestaurantVisit()
     Assert(rt.GetRestaurantVisitsByUser(userIds[1]).Count == 1);
 }
 
+// Check the PickRestaurant API
 void ValidatePickRestaurant()
 {
     ClearDB();
@@ -188,6 +213,7 @@ void ValidatePickRestaurant()
     Assert(restaurantName2 is not null);
 }
 
+// Helper method to add a new user to the database. If the user already exists, delete it and re-add it.
 long AddNewUser(string userName)
 {
     rt.BeginTransaction();
@@ -199,6 +225,7 @@ long AddNewUser(string userName)
     return userId!.Value;
 }
 
+// Helper method to add a new restaurant to the database. If the restaurant already exists, delete it and re-add it.
 long AddNewRestaurant(string restaurantName)
 {
     rt.BeginTransaction();
@@ -210,6 +237,7 @@ long AddNewRestaurant(string restaurantName)
     return restaurantId!.Value;
 }
 
+// Helper method to add a new group to the database. If the group already exists, delete it and re-add it. 
 long AddNewGroup(string groupName)
 {
     rt.BeginTransaction();
@@ -221,9 +249,11 @@ long AddNewGroup(string groupName)
     return groupId!.Value;
 }
 
+// Add a group of users to the database.
 long[] AddUsers(int count)
 {
     return Add().ToArray();
+    
     IEnumerable<long> Add()
     {
         for (var n = 0; n < count; n++)
@@ -233,9 +263,11 @@ long[] AddUsers(int count)
     }
 }
 
+// Add some groups to the database
 long[] AddGroups(int count)
 {
     return Add().ToArray();
+    
     IEnumerable<long> Add()
     {
         for (var n = 0; n < count; n++)
@@ -245,9 +277,11 @@ long[] AddGroups(int count)
     }
 }
 
+// Add some restaurants to the database
 long[] AddRestaurants(int count)
 {
     return Add().ToArray();
+    
     IEnumerable<long> Add()
     {
         for (var n = 0; n < count; n++)
@@ -257,6 +291,7 @@ long[] AddRestaurants(int count)
     }
 }
 
+// Helper method to check a condition and abort if not true
 void Assert(bool cond, [CallerArgumentExpression("cond")] string? expr = null)
 {
     if (!cond)
@@ -265,6 +300,7 @@ void Assert(bool cond, [CallerArgumentExpression("cond")] string? expr = null)
     }
 }
 
+// Delete any existing database file and ensure that the directory exists
 void PrepDBFile()
 {
     try
